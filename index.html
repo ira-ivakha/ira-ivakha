@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Табличка множення!!</title>
+    <style>
+        body {
+            font-size: 18px;
+            font-family: 'OpenSans', sans-serif;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .answer-wrapper {
+            padding: 20px 30px;
+            border-bottom: 1px solid #ccc;
+        }
+        .answer-wrapper:nth-child(odd) {
+            background-color: #eee;
+        }
+        .results-show {
+            display: none;
+        }
+        .results-show.shown {
+            display: block;
+            color: #004475;
+        }
+        .error {
+            border-color: red;
+        }
+        input {
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 0;
+            width: 100px;
+            border-radius: 3px;
+            background-color: #004475;
+            color: white;
+            font-weight: bold;
+            border:none;
+            -webkit-appearance: none;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 20px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+<main class="container">
+
+    <h1>Табличка множення!!!</h1>
+    <div class="heading">
+        <label for="number">Скільки задачок задавати?</label>
+        <input type="number" id="number" value="10">
+        <button id="start">Старт!</button>
+    </div>
+
+    <span class="timer">Час: </span><span id="minutes">00</span>:<span id="seconds">00</span>
+    <div id="question-wrapper">
+        <!--<div class="answer-wrapper">-->
+        <!--<span class="question"> -->
+        <!--5 * 9 = -->
+        <!--<input type="number" class="answer" id="answer3">-->
+        <!--</span>-->
+        <!--</div>-->
+    </div>
+    <button id="submit-question">Готово</button>
+    <p class="results-show">Всього <span id="trueres"></span> правильних відповідей з <span id="allres"></span> за <span id="min-count"></span> хв і <span id="sec-count"></span> секунд.</p>
+
+</main>
+<!--<script src="js/hw-2-comments.js"></script>-->
+<script src="js/table.js"></script>
+</body>
+</html>
