@@ -8,18 +8,33 @@ document.getElementById('start').onclick = function () {
     number = document.getElementById('number').value;
     timeout();
     result = [];
-    var examplePlace = document.getElementById('question');
+    var isDivision = (document.getElementById('division').checked)? true : false;
+    var isAll = (document.getElementById('all').checked)? true : false;
+    console.log('isdiv ',isDivision);
     var item1, item2, count = 0;
+    var operSymbol;
     for(var i=0; i<number; i++) {
         item1 = Math.floor((Math.random() * 9) + 1);
         item2 = Math.floor((Math.random() * 9) + 1);
-        result.push(item1*item2);
+        operSymbol = '*';
+        if (isAll) isDivision = Math.floor((Math.random() * 2) );
+        console.log(isDivision);
+        operResult = item1*item2;
+        if (isDivision) {
+            var tmpResult = item1;
+            item1 = operResult;
+            operResult = tmpResult;
+            operSymbol = ':';
 
+        }
+        result.push(operResult);
+        console.log('if ',isDivision, item1, item2, operResult);
         var answerWrapper = document.createElement('div');
         answerWrapper.className = 'answer-wrapper';
         var question = document.createElement('span');
         question.className = 'question';
-        question.innerHTML+= ' '+item1+' * '+item2+' = ';
+        question.innerHTML+= ' '+item1+' '+operSymbol+' '+item2+' = ';
+
         var answerInput = document.createElement('input');
         answerInput.type='number';
         answerInput.className = 'answer';
