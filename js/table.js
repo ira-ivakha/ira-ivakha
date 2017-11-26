@@ -5,6 +5,7 @@ var result = [], answer = [], trueRes = 0;
 var number;
 
 document.getElementById('start').onclick = function () {
+    document.getElementById('question-wrapper').innerHTML = '';
     number = document.getElementById('number').value;
     timeout();
     result = [];
@@ -28,7 +29,6 @@ document.getElementById('start').onclick = function () {
 
         }
         result.push(operResult);
-        console.log('if ',isDivision, item1, item2, operResult);
         var answerWrapper = document.createElement('div');
         answerWrapper.className = 'answer-wrapper';
         var question = document.createElement('span');
@@ -63,15 +63,18 @@ document.getElementById('submit-question').addEventListener('click', function(){
     document.getElementById('allres').innerHTML = number;
     document.getElementById('sec-count').innerHTML = document.getElementById("seconds").innerHTML;
     document.getElementById("min-count").innerHTML = document.getElementById("minutes").innerHTML;
-    console.log(trueRes);
 });
 
 function  timeout () {
+
     var sec = 0;
-    function pad ( val ) { return val > 9 ? val : "0" + val; }
-    setInterval( function(){
+    function pad ( val ) { return val > 9 ? val : "0" + val; };
+
+    setInterval(function (){
         document.getElementById("seconds").innerHTML=pad(++sec%60);
         document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
     }, 1000);
 
 }
+
+
