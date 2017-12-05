@@ -45,15 +45,18 @@
             border-radius: 3px;
             border: 1px solid #ccc;
         }
-        button {
-            padding: 10px 0;
-            width: 100px;
+        button,
+        .button {
+            padding: 10px 15px;
+            width: auto;
+            min-width: 100px;
             border-radius: 3px;
             background-color: #004475;
             color: white;
             font-weight: bold;
             border:none;
             -webkit-appearance: none;
+            text-decoration: none;
         }
         .question {
             font-weight: bold;
@@ -91,8 +94,12 @@
     </div>
     <button id="submit-question">Готово</button>
     <p class="results-show">Всього <span id="trueres"></span> правильних відповідей з <span id="allres"></span> за <span id="min-count"></span> хв і <span id="sec-count"></span> секунд.</p>
+    <p>
+        <a href="fifteen.html" target="_blank" class="button">Погратись в 15</a>
+    </p>
 
 </main>
+
 <!--<script src="js/hw-2-comments.js"></script>-->
 <script src="js/table.js"></script>
 </body>

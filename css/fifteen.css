@@ -1,0 +1,63 @@
+.fifteen {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  background-color: #ccc;
+}
+.fifteen li {
+  box-sizing: border-box;
+  border: 1px solid #444;
+  height: 25%;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  vertical-align: middle;
+  color: red;
+}
+.fifteen span {
+  user-select: none;
+  line-height: 75px;
+  vertical-align: inherit;
+  font-family: sans-serif;
+  font-size: 42px;
+  text-shadow: 1px 1px 1px #444;
+
+}
+.tale {
+  box-shadow: inset -1px -1px 2px #777, inset 1px 1px 2px #aaa;
+  cursor: crosshair;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.empty {
+  background-color: #ccc;
+}
+.congrats {
+  display: none;
+  color: green;
+  font-size: 48px;
+  font-weight: 700;
+}
+.congrats.win {
+  display: block;
+}
+.shuffle {
+  margin: 20px auto;
+  line-height: 60px;
+  font-size: 32px;
+  font-weight: 700;
+  border: 1px solid #444;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: inset 2px 1px 1px #666;
+}
+.shuffle:active {
+  background-color: #eee;
+  box-shadow: inset 2px 1px 2px #666;
+}
