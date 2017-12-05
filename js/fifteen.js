@@ -97,7 +97,7 @@ function checkIfDraggable(draggedProduct) {
     if (((((hPos - hTarget) == 1 ) || (hTarget - hPos == 1) ) && (vTarget - vPos == 0 )) ||
         ((((vPos - vTarget) == 1 ) || (vTarget - vPos == 1) ) && (hTarget - hPos == 0 ))) {
         var emptySibling = draggedProduct.nextSibling;
-        if (!((hTarget == 3) && (vTarget == 3))) {
+        if (emptySibling !== null)  {
             productsNode.insertBefore(draggedProduct, targetProduct);
             productsNode.insertBefore(targetProduct, emptySibling );
         }
