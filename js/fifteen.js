@@ -3,17 +3,16 @@
  */
 var products = $('#fifteen'),
     productsNode = document.getElementById('fifteen'),
-    product = $('#fifteen li'),
     draggedProduct,
     shuffle = $('#shuffle');
 
-product
+$('#fifteen li')
     .attr('draggable', 'true')
 ;
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    placesRewrite(product);
+    placesRewrite($('#fifteen li'));
 
     products
         .on('dragstart', dragstart)
@@ -47,6 +46,7 @@ function drop(event) {
 function placesRewrite() {
     var verticalPos =0,
         horisontalPos = 0;
+    var product = $('#fifteen li');
     product.each(function(){
         this.setAttribute('data-vertical',verticalPos);
         this.setAttribute('data-horisontal', horisontalPos);
@@ -60,7 +60,7 @@ function placesRewrite() {
 
 function checkIfWin() {
     var checker = 0;
-    // console.log('product', product);
+    var product = $('#fifteen li');
     for (var i=0; i<=15; i++) {
         if (parseInt(product[i].getAttribute('data-id')) === i+1) checker++;
     };
@@ -73,7 +73,7 @@ function checkIfWin() {
 function shuffleTales (){
 
     var siblingDataId  = 0;
-
+    var product = $('#fifteen li');
     var i = 0;
     product.each(function(){
         siblingDataId = Math.floor((Math.random() * 15) + 1);
@@ -81,11 +81,12 @@ function shuffleTales (){
         productsNode.insertBefore(product[i], document.querySelector('[data-id="'+siblingDataId+'"]'));
         i++;
     });
-    product = $('#fifteen li');
+
     placesRewrite(product);
 }
 
 function checkIfDraggable(draggedProduct) {
+    var product = $('#fifteen li');;
     var vPos = draggedProduct.getAttribute('data-vertical'),
         hPos = draggedProduct.getAttribute('data-horisontal'),
         targetProduct = document.getElementById('empty'),
@@ -106,5 +107,5 @@ function checkIfDraggable(draggedProduct) {
         }
 
     };
-    product = $('#fifteen li');
+
 }
